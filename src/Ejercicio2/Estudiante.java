@@ -12,6 +12,13 @@ public class Estudiante {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + "\n"
+                + "Apellido1: " + apellido + "\n"
+                + "Id: " + id;
+    }
+
     public String getNombre() {
         return nombre;
     }
