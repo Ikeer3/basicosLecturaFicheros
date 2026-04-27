@@ -1,6 +1,4 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,6 +18,7 @@ public class Ejercicio1 {
 
         Scanner escaner = new Scanner(System.in);
         ArrayList<String> listaFrases = new ArrayList<>();
+        String fichero = "ejemplo.txt";
 
         System.out.println("\nIntroduce 3 frases");
         for (int i = 0; i < 3; i++) {
@@ -27,12 +26,22 @@ public class Ejercicio1 {
             listaFrases.add(escaner.nextLine());
         }
 
-        BufferedWriter escritor = new BufferedWriter(new FileWriter("ejemplo.txt"));
+        BufferedWriter escritor = new BufferedWriter(new FileWriter(fichero));
         for (String str: listaFrases) {
             escritor.write(str);
             escritor.newLine();
         }
-
         escritor.close();
+
+        BufferedReader lector = new BufferedReader(new FileReader(fichero));
+        String resultado = "";
+        String linea = lector.readLine();
+        while (linea != null) {
+            resultado = resultado + linea + "\n";
+            linea = lector.readLine();
+        }
+
+        lector.close();
+        System.out.print("\n" + resultado);
     }
 }
