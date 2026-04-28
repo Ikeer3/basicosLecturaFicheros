@@ -18,7 +18,8 @@ public class Alumno {
         return nota;
     }
 
-    public void mostrarDatos() {
-        System.out.print("\n" + nombre + " ha sacado un " + nota);
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + "\n" + "Nota: " + nota;
     }
 }
