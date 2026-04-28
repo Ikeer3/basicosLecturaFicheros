@@ -1,0 +1,24 @@
+package Ejercicio3;
+
+public class Alumno {
+
+    private String nombre;
+    private int nota;
+
+    public Alumno(String nombre, int nota) {
+        this.nombre = nombre;
+        this.nota = nota;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void mostrarDatos() {
+        System.out.print("\n" + nombre + " ha sacado un " + nota);
+    }
+}
